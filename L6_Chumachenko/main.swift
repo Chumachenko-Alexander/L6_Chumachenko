@@ -50,7 +50,8 @@ extension GenericQueue {
 
 extension GenericQueue {
     
-    subscript(index: Int) -> T {
+    subscript(index: Int) -> T? {
+        guard index >= 0 && index <= elements.count else { return nil }
         return elements[index]
     }
 }
